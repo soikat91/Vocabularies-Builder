@@ -1,5 +1,5 @@
 <?php
-
+include_once "./connectiiondb.php";
 
  function getStatus($statusCode=0){
     $status=[
@@ -12,4 +12,21 @@
      ];
 
      return $status[$statusCode];
+ }
+
+ function getWords($id,$serarchText=null){
+
+    global $connect;
+    if($serarchText){
+        $query="Select * from word where user_id='$id' and  word like '$serarchText%' ";
+    }else{ 
+    $query="Select * from word where user_id='$id' ";
+    }
+    $result=mysqli_query($connect,$query);
+    $data=[];
+    while($_data=mysqli_fetch_assoc($result)){
+        array_push($data,$_data);
+    }
+    return $data;
+
  }

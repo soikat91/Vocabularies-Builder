@@ -64,4 +64,16 @@ session_start();
 
     header("Location:index.php?status={$statusCode}");
 
- }
+ }  else if('add'==$action){
+
+    $word=$_REQUEST['word']??'';
+    $meaning=$_REQUEST['meaning']??'';
+    $user_id=$_SESSION['id'];
+    if($word && $meaning && $user_id){
+
+        $query="INSERT into word(word,meaning,user_id) values('$word','$meaning','$user_id')";
+        // echo $query;
+        mysqli_query($connect,$query);
+    }
+    header("Location:words.php");
+}

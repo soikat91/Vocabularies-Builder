@@ -36,6 +36,7 @@ session_start();
                  <div class="card-body bg-secondary text-white font-weight-bold border">
                     
                     <form id= "form" action="register.php" method="post">
+                      
                         <h4 class="text-center mb-5">Login</h4>
                         <label for="" class="form-label">Email</label>
                         <input type="text" class="form-control" name="email" placeholder="Email Address">
@@ -48,7 +49,7 @@ session_start();
                           echo getStatus($status);
                         ?></p>
                         <button type="submit" class="btn btn-primary mt-1">Submit</button>
-                        <input type="hidden" id="action" name="action" value="login">
+                        <input type="text" id="action" name="action" value="login">
                     </form>
                  </div>
 
@@ -64,30 +65,36 @@ session_start();
   </div>
 
 
-<script src="./script.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
-<script>
-  ;(function($){
+<script src="./script.js">
+// ;(function($){
     
-    $(document).ready(function(){
-       // alert("hi");
-        $("#login").on("click",function(){
-           $("#form h4 ").html("Login");
-           $("#action").val("login");
-        })
+    // $(document).ready(function(){
+        // alert("hi");
+        // $("#login").on("click",function(){
+           
+        // })
 
-        $("#register").on("click",function(){
-          $("#form h4").html("Register");
-          $("$action").val("register");
-        })
+        // $("#login").on("click",function(){
+        //     $("#form h4 ").html("Login");
+        //     $("#action").val("login");
+        //  })
+ 
+        //  $("#register").on("click",function(){
+        //    $("#form h4").html("Register");
+        //    $("#action").val("register");
+        //  })        
+       
     
-    })
+//     })
     
 
-})(jQuery);
+// })(jQuery);
 </script>
+
 </html>
